@@ -4,10 +4,20 @@ abstract class Pez {
     abstract val color: String
 }
 
-class Tiburon : Pez() {
+class Tiburon : Pez(), AccionPez {
     override val color: String = "gris"
+    override fun comer() {
+        println("Cazar y comer peces")
+    }
 }
 
-class PezPayaso : Pez() {
+class PezPayaso : Pez(), AccionPez {
     override val color: String = "dorado"
+    override fun comer() {
+        println("Comer algas")
+    }
+}
+
+interface AccionPez {
+    fun comer()
 }
